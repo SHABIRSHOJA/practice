@@ -1,6 +1,11 @@
 var express = require('express');
 
+var Products = require('./Routes/Products');
+var Users = require('./Routes/Users');
 var app = express();
+
+app.use('/Products', Products);
+app.use('/Users', Users);
 
 //CRUD
 app.post('/creat-user', (req, res) => {
@@ -46,7 +51,7 @@ app.get('/read-all-Product', (req, res) => {
     res.send("List of Product");
 });
 
-app.get('/get-Product-details', (req, res) => {
+/*app.get('/get-Product-details', (req, res) => {
 
     const UserObj = {
         id: 1,
@@ -55,7 +60,7 @@ app.get('/get-Product-details', (req, res) => {
         Status: "True"
     }
     res.send(UserObj);
-});
+});*/
 
 app.delete('/delete-Product', (req, res) => {
     res.send("List of Product");
