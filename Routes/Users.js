@@ -22,4 +22,9 @@ router.get('/search-username/:key([a-zA-Z]{5})', (req, res) => {
     res.send("Data Captured is " + req.params.key);
 });
 
+
+router.get('*', (req, res) => {
+    res.send("Url not found 404");
+});
+
 module.exports = router;
