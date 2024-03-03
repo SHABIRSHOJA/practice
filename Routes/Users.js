@@ -7,9 +7,19 @@ router.get('/Users', (req, res) => {
     res.send("get request for Users");
 });
 
-// /Products/get-product-details
-router.get('/get-Users-details', (req, res) => {
-    res.send("get request for Users details of ecommerce");
+// /Users/get-Users-details
+router.get('/get-Users-details/:id', (req, res) => {
+    res.send("get request for Users details of ecommerce" + req.params.id);
+});
+
+// /Users/search/:key([0-9]{4}
+router.get('/search/:key([0-9]{4})', (req, res) => {
+    res.send("Data Captured is " + req.params.key);
+});
+
+// /Users/search-username/:key([a-zA-Z]{4}
+router.get('/search-username/:key([a-zA-Z]{5})', (req, res) => {
+    res.send("Data Captured is " + req.params.key);
 });
 
 module.exports = router;
