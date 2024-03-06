@@ -2,6 +2,12 @@ var express = require('express');
 
 var router = express.Router();
 
+router.use('/' , (req, res, next) => {
+    console.log("API call recived");
+    next();
+});
+
+
 // /Users
 router.get('/Users', (req, res) => {
     res.send("get request for Users");
@@ -26,5 +32,10 @@ router.get('/search-username/:key([a-zA-Z]{5})', (req, res) => {
 router.get('*', (req, res) => {
     res.send("Url not found 404");
 });
+
+
+
+
+
 
 module.exports = router;
